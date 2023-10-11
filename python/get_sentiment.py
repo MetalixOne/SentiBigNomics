@@ -14,8 +14,8 @@ import getpass
 from nltk.corpus import sentiwordnet as swn  
 from pathlib import Path
 import re 
-import senticnet6
-import senti_bignomics
+from senticnet import senticnet6
+from . import senti_bignomics
 
 
 def safe_string_cast_to_numerictype(val, to_type, default = None):

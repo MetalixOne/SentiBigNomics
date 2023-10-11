@@ -1,4 +1,4 @@
-import numpy as np
+simport numpy as np
 import time
 import multiprocessing
 import itertools
@@ -14,7 +14,7 @@ import getpass
 from nltk.corpus import sentiwordnet as swn  
 from pathlib import Path
 import re 
-import senticnet5
+import senticnet6
 import senti_bignomics
 
 
@@ -76,7 +76,7 @@ def FeelIt(tlemma, tpos=None, tokentlemma=None, PrintScr=False, UseSenticNet=Fal
     sentic_sentiment = 0
     if UseSenticNet == True:
         tosearcsenticnet = tlemma.lower().replace(" ", "_")
-        senticitem = senticnet5.senticnet.get(tosearcsenticnet)  
+        senticitem = senticnet6.senticnet.get(tosearcsenticnet)  
         if senticitem and senticitem[7]:
             valstr = senticitem[7]
             sentic_sentiment = safe_string_cast_to_numerictype(valstr, float, 0)
